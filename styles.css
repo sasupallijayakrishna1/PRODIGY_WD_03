@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #fc466b, #3f5efb);
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.glow-title {
+    font-size: 40px;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0057, 0 0 30px #ff0057, 0 0 40px #ff0057;
+    margin-bottom: 20px;
+}
+
+.game-status {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 0 10px #fff;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.cell.x {
+    color: #ff0057;
+    animation: popX 0.3s ease-out;
+    text-shadow: 0 0 10px #ff0057, 0 0 20px #ff0057;
+}
+
+.cell.o {
+    color: #00d9ff;
+    animation: popO 0.3s ease-out;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+}
+
+@keyframes popX {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes popO {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reset-btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #3f5efb, #fc466b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(45deg, #fc466b, #3f5efb);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
